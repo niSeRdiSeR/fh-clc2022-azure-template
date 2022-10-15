@@ -1,0 +1,16 @@
+{
+  "scriptFile" : "../clc3-azure-example-1.0-SNAPSHOT.jar",
+  "entryPoint" : "com.breitenbaumer.CustomVisionFunction.run",
+  "bindings" : [ {
+    "type" : "httpTrigger",
+    "direction" : "in",
+    "name" : "req",
+    "methods" : [ "POST" ],
+    "dataType" : "binary",
+    "authLevel" : "FUNCTION"
+  }, {
+    "type" : "http",
+    "direction" : "out",
+    "name" : "$return"
+  } ]
+}

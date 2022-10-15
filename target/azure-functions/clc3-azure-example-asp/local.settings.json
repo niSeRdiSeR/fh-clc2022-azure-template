@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "JAVA_HOME": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+    "CONTAINERNAME": "imageanalysis",
+    "RESULTSCONTAINERNAME": "results",
+    "STORAGEACCOUNT_NAME": "storage4xn73xp6xleaa",
+    "SUBSCRIPTIONKEY": "32614f5e2dd14185885c07c5cc5850d5"
+  }
+}

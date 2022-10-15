@@ -1,0 +1,6 @@
+com/breitenbaumer/CustomVisionFunction.class
+com/breitenbaumer/Function.class
+com/breitenbaumer/shared/CustomVisionService.class
+com/breitenbaumer/shared/CognitiveService.class
+com/breitenbaumer/shared/BlobClientProvider.class
+com/breitenbaumer/shared/FileUploadService.class
