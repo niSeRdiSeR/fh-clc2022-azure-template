@@ -55,6 +55,9 @@ module cosmosdb_roleassignment_module 'cosmosdb_roleassignment_module.bicep' = {
     cosmosdb_name: cosmosdb_name
     logicapp_identity_principalid: logicapp_module.outputs.logicapp_principalid
   }
+  dependsOn:[
+    logicapp_module
+  ]
 }
 
 module function_module 'function_module.bicep' = {
