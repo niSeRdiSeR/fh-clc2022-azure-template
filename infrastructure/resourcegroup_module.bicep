@@ -5,7 +5,7 @@ param connections_azureblob_name string = 'azureblob'
 param location string = 'westeurope'
 
 var contentshare_name = 'functioncontentshare'
-var cosmosdb_name = 'fh-clc3-cosmosdb'
+var cosmosdb_name = 'fh-clc3-cosmosdb-${uniqueString(resourceGroup().id)}'
 
 module insights_module 'insights_module.bicep' = {
   name: 'insights_module'

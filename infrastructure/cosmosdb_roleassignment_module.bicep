@@ -15,6 +15,16 @@ resource roleAssignment_cosmosdb 'Microsoft.Authorization/roleAssignments@2022-0
   }
 }
 
+resource roleAssignment_cosmosdbaccountreader 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(cosmosdb.id)
+  scope: cosmosdb
+  properties: {
+    principalId: logicapp_identity_principalid
+    roleDefinitionId: '/providers/Microsoft.Authorization/roleDefinitions/fbdf93bf-df7d-467e-a4d2-9458aa1360c8'
+    principalType: 'ServicePrincipal'
+  }
+}
+
 resource roleassignment 'Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments@2021-10-15' = {
   name: guid(cosmosdb.id)
   parent: cosmosdb

@@ -172,14 +172,4 @@ resource databaseAccounts_fh_clc3_cosmosdb_name_ImageAnalysis_results 'Microsoft
   }
 }
 
-resource databaseAccounts_fh_clc3_cosmosdb_name_ImageAnalysis_default 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings@2022-02-15-preview' = {
-  parent: databaseAccounts_fh_clc3_cosmosdb_name_ImageAnalysis
-  name: 'default'
-  properties: {
-    resource: {
-      throughput: 400
-    }
-  }
-}
-
 output cosmosdb_id string = databaseAccounts_resource.id

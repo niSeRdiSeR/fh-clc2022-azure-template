@@ -18,6 +18,41 @@
 5) now you should have a complete dev environment running inside the docker container.
 
 ## Infrastructure Deployment
+### Preparation:
+Microsoft introduced the requirement to agree to their "Responsible AI" terms of service. Doing so requires the following steps:
+
+1) Open portal.azure.com
+2) Navigate into your subscription
+3) In the left menu, click "Access control (IAM)"
+4) Navigate to the "Role assignments" tab
+5) Click "+ Add" in the top menu and click "Add role assignment" 
+6) In the "Roles" tabs, select "Cognitive Services Contributor"
+7) In the members tab click "+ Select members", and select your user in the newly openend menu on the right of the screen and click the "Select" button
+8) Click the "Review + assign" button on the botton
+9) Click the "Review + assign" button on the botton again
+10) Now click the "Microsoft Azure" text in the topmost bar to navigate to the "Home" screen
+11) Click "Create a resource"
+12) Enter "Cognitive Services" in the search bar and press Enter
+13) Click the blue "Create" button
+14) Make sure your Student Subscription is selected if you already have several subscriptions
+15) Click "Create new" below the "Resource group" dropdown. The list should be empty if you have not created any Azure resources so far
+16) enter a name for your resource group (which name is not important since we will delte it right after creating the Cognitive Service account)
+17) In the "Region" dropdown, select "West Europe"
+18) Enter a name for the resource (again it does not matter which one since we will delete it again)
+19) Unter Pricing Tier, select "Standard S0"
+20) Check the box to acknowledge the Responsible AI terms
+21) Click "Review + create" 
+21) If validation is succesful, click "Create"
+21) Wait until creation is done
+21) Now click the "Microsoft Azure" text in the topmost bar to navigate to the "Home" screen again
+22) Click on "Resourcxe groups" under "Navigate"
+23) Select the resource group that was just created (see step 16)
+24) Click "Delete resource group" in the menu bar
+25) Make sure that the resource group only contains the custom vision service that we just created
+26) Confirm by writing the name of the resource group into the text field and click the "Delete" button.
+
+
+### Steps:
 1) fork the example respository
 2) check out your own repo
 3) Open Terminal in the repo root folder
