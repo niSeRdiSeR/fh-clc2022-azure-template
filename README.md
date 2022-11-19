@@ -57,7 +57,7 @@ Microsoft introduced the requirement to agree to their "Responsible AI" terms of
 2) check out your own repo
 3) Open Terminal in the repo root folder
 4) execute `cd ./infrastructure`
-5) execute `az login` and log in to your Azure Free Trial account
+5) execute `az login --use-device-code` and log in to your Azure Free Trial account
 6) execute `az account set --subscription <your subscription name>`
 7) execute `az deployment sub create --template-file main.bicep --location WestEurope`
    - The deployment will ask for the following values:
