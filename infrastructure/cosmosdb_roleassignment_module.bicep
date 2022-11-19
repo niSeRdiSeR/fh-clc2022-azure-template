@@ -1,12 +1,14 @@
 param cosmosdb_name string
 param logicapp_identity_principalid string
+param roleAssignmentGuid1 string = newGuid()
+param roleAssignmentGuid2 string = newGuid()
 
 resource cosmosdb 'Microsoft.DocumentDB/databaseAccounts@2022-05-15' existing = {
   name: cosmosdb_name
 }
 
 resource roleAssignment_cosmosdb 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(cosmosdb.id)
+  name: roleAssignmentGuid1
   scope: cosmosdb
   properties: {
     principalId: logicapp_identity_principalid
@@ -16,7 +18,7 @@ resource roleAssignment_cosmosdb 'Microsoft.Authorization/roleAssignments@2022-0
 }
 
 resource roleAssignment_cosmosdbaccountreader 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(cosmosdb.id)
+  name: roleAssignmentGuid2
   scope: cosmosdb
   properties: {
     principalId: logicapp_identity_principalid

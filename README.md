@@ -62,7 +62,9 @@ Microsoft introduced the requirement to agree to their "Responsible AI" terms of
 7) execute `az deployment sub create --template-file main.bicep --location WestEurope`
    - The deployment will ask for the following values:
      - 'deploymentName': free choosable name for the deployment (e.g. `clc3-example`)
-     - 'rgName': name of the resource group which should be created for the deployment (e.g. `rg-clc3-example`)
+     - 'rgName': name of the resource group which should be created for the deployment(e.g. `rg-clc3-example-<lastname>`)
+     
+     **!!Important!!: use your last name as a prefix on the resource group name to avoid name colisions with other students**
      - 'location': region where the infrastructure should be created (e.g. `westeurope`)
 8) **In case the deployment fails because it could not create the role-assignments, trigger the deployment a second time using the exact same values as before. This error is caused by Azure AD having a delay in the creation of new identities, while the template assumes that they are created immediately.**
 ---
