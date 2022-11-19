@@ -24,12 +24,12 @@ resource connections_cognitiveservicescomputervision_name_resource 'Microsoft.We
       description: 'Extrahieren Sie umfangreiche Informationen aus Bildern, um visuelle Daten zu kategorisieren und zu verarbeiten, und schützen Sie Ihre Benutzer mit Azure Cognitive Service vor unerwünschten Inhalten.'
       iconUri: 'https://connectoricons-prod.azureedge.net/releases/v1.0.1549/1.0.1549.2680/cognitiveservicescomputervision/icon.png'
       brandColor: '#1267AE'
-      id: '/subscriptions/c0a97786-cce2-4cf3-9f1a-022e775c19ad/providers/Microsoft.Web/locations/westeurope/managedApis/cognitiveservicescomputervision'
+      id: '${subscription().id}/providers/Microsoft.Web/locations/westeurope/managedApis/cognitiveservicescomputervision'
       type: 'Microsoft.Web/locations/managedApis'
     }
     testLinks: [
       {
-        requestUri: '${environment().resourceManager}:443/subscriptions/c0a97786-cce2-4cf3-9f1a-022e775c19ad/resourceGroups/rg-fh-clc3-example/providers/Microsoft.Web/connections/${connections_cognitiveservicescomputervision_name}/extensions/proxy/vision/v2.0/models?api-version=2016-06-01'
+        requestUri: '${environment().resourceManager}:443${subscription().id}/resourceGroups/rg-fh-clc3-example/providers/Microsoft.Web/connections/${connections_cognitiveservicescomputervision_name}/extensions/proxy/vision/v2.0/models?api-version=2016-06-01'
         method: 'get'
       }
     ]
