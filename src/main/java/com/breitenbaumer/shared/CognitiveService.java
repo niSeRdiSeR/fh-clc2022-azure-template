@@ -10,11 +10,13 @@ import com.azure.core.http.HttpResponse;
 import com.azure.core.http.netty.NettyAsyncHttpClientBuilder;
 import com.azure.core.util.UrlBuilder;
 
-public class CognitiveServiceClientProvider {
+public class CognitiveService {
     private Logger logger;
-    // TODO: (1) define strings for endpoint, subscription key and endpointPath
+    private String endpoint = "westeurope.api.cognitive.microsoft.com";
+    private String subscriptionKeyEnvVarName = "SUBSCRIPTIONKEY";
+    private String endpointPath = "vision/v3.2/analyze";
 
-    public CognitiveServiceClientProvider(Logger logger) {
+    public CognitiveService(Logger logger) {
         this.logger = logger;
     }
 
@@ -30,10 +32,9 @@ public class CognitiveServiceClientProvider {
         try {
             UrlBuilder builder = new UrlBuilder().setHost(endpoint);
 
-            // TODO: (2) set request parameters for image analysis depending on what you want to analyze
-            
-            // TODO: (3) build the URL path
-            
+            // request parameters for image analysis
+            String requestParameters = "visualFeatures=Adult,Brands,Categories,Color,Description,Faces,ImageType,Objects,Tags";
+            builder.setPath(endpointPath + "?" + requestParameters);
             builder.setScheme("https");
             HttpRequest request = new HttpRequest(HttpMethod.POST, builder.toUrl());
 
